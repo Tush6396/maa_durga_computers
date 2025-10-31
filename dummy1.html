@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAA DURGA Computers - Sales, Repair & Refurbishment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --success: #27ae60;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      color: #333;
+      background: #f9f9f9;
+      overflow-x: hidden;
+    }
+    
+    /* Top bar */
+    .topbar {
+      background: var(--primary);
+      color: var(--light);
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 60px;
+      font-size: 14px;
+      animation: fadeIn 1s ease;
+    }
+    
+    .topbar i {
+      margin-right: 6px;
+      color: var(--secondary);
+    }
+    
+    /* Navbar */
+    .navbar {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled {
+      padding: 10px 60px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo:hover img {
+      transform: rotate(5deg);
+    }
+    
+    .logo h2 {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 24px;
+    }
+    
+    .logo span {
+      color: var(--secondary);
+    }
+    
+    .menu {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+    
+    .menu li {
+      position: relative;
+    }
+    
+    .menu a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--dark);
+      transition: 0.3s;
+      position: relative;
+    }
+    
+    .menu a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    
+    .menu a:hover {
+      color: var(--secondary);
+    }
+    
+    .menu a:hover:after {
+      width: 100%;
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .nav-right button {
+      background: var(--secondary);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+    }
+    
+    .nav-right button:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+    }
+    
+    .nav-right .search {
+      background: var(--secondary);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-right .search:hover {
+      background: var(--primary);
+      transform: rotate(15deg);
+    }
+    
+    .nav-right .search i {
+      color: #fff;
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 60px;
+      color: #fff;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 650px;
+      z-index: 1;
+      animation: slideInLeft 1s ease;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .hero h1 span {
+      color: var(--secondary);
+    }
+    
+    .hero p {
+      margin-bottom: 30px;
+      font-size: 18px;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    
+    .hero .buttons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .hero .buttons a {
+      background: var(--secondary);
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+    }
+    
+    .hero .buttons a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+    }
+    
+    .hero .buttons a:nth-child(2) {
+      background: transparent;
+      border: 2px solid #fff;
+    }
+    
+    .hero .buttons a:nth-child(2):hover {
+      background: #fff;
+      color: var(--primary);
+    }
+    
+    .floating-icons {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 2;
+    }
+    
+    .floating-icons .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      animation: float 3s ease-in-out infinite;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .floating-icons .icon:nth-child(2) {
+      animation-delay: 0.5s;
+      background: var(--accent);
+    }
+    
+    .floating-icons .icon:nth-child(3) {
+      animation-delay: 1s;
+      background: var(--success);
+    }
+    
+    .floating-icons .icon:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 80px 60px;
+      background: #fff;
+      margin-top: -50px;
+      position: relative;
+      z-index: 2;
+      border-radius: 15px 15px 0 0;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .feature-box {
+      background: #f9faff;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-box:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 0;
+      background: var(--secondary);
+      transition: height 0.3s ease;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-box:hover:before {
+      height: 100%;
+    }
+    
+    .feature-box i {
+      font-size: 42px;
+      color: var(--secondary);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-box:hover i {
+      transform: scale(1.2);
+      color: var(--primary);
+    }
+    
+    .feature-box h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    
+    .feature-box p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    /* About Section */
+    .about {
+      padding: 100px 80px;
+      background: #fff;
+    }
+    
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+    
+    .about-text {
+      flex: 1;
+    }
+    
+    .about-text h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .about-text h2:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+    }
+    
+    .about-text p {
+      margin-bottom: 20px;
+      color: #555;
+      line-height: 1.8;
+    }
+    
+    .about-list {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+    
+    .about-list li {
+      margin-bottom: 12px;
+      font-weight: 500;
+      color: #444;
+      display: flex;
+      align-items: center;
+    }
+    
+    .about-list i {
+      color: var(--secondary);
+      margin-right: 12px;
+      background: rgba(52, 152, 219, 0.1);
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .about-buttons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .btn-primary {
+      background: var(--secondary);
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--dark);
+      border: 2px solid var(--dark);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--dark);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+    
+    .about-image {
+      flex: 1;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    .about-image .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--secondary);
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    }
+    
+    .about-image .play-btn:hover {
+      background: var(--primary);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    
+    .about-image .play-btn i {
+      font-size: 28px;
+      color: #fff;
+    }
+    
+    /* Services Section */
+    .services {
+      background: linear-gradient(to right, var(--primary), #2c3e50e0);
+      color: #fff;
+      text-align: center;
+      padding: 100px 80px;
+      position: relative;
+    }
+    
+    .services::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .services-container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .services-container h5 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--secondary);
+    }
+    
+    .services-container h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .services-container p {
+      max-width: 750px;
+      margin: 0 auto 50px;
+      color: #ddd;
+      line-height: 1.6;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .service-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px 30px;
+      border-radius: 10px;
+      text-align: left;
+      position: relative;
+      color: #fff;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .service-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: var(--secondary);
+      opacity: 0.2;
+      transition: height 0.3s ease;
+      z-index: -1;
+    }
+    
+    .service-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .service-box:hover::before {
+      height: 100%;
+    }
+    
+    .service-box h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .service-box p {
+      font-size: 15px;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+      text-align: left;
+      margin: 0 0 25px 0;
+    }
+    
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--secondary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-box:hover .service-icon {
+      background: #fff;
+      color: var(--secondary);
+      transform: rotate(15deg);
+    }
+    
+    /* Products Section */
+    .products {
+      padding: 100px 80px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    
+    .section-header {
+      margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-header h2:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+      transform: translateX(-50%);
+    }
+    
+    .section-header p {
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--accent);
+      color: #fff;
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      z-index: 1;
+    }
+    
+    .product-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.1);
+    }
+    
+    .product-content {
+      padding: 20px;
+    }
+    
+    .product-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    
+    .product-price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .price {
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 14px;
+    }
+    
+    .product-rating {
+      color: #f39c12;
+      margin-bottom: 15px;
+    }
+    
+    .product-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 12px;
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .product-btn:hover {
+      background: var(--primary);
+    }
+    
+    /* Stats Section */
+    .stats {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      display: flex;
+      justify-content: space-around;
+      padding: 80px 0;
+      color: #fff;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stats::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      opacity: 0.1;
+    }
+    
+    .stat-box {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      animation: countUp 2s ease-out;
+    }
+    
+    .stat-box i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .stat-box h2 {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .stat-box p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    
+    /* Why Choose Us Section */
+    .choose-us-section {
+      display: flex;
+      width: 100%;
+      min-height: 100vh;
+    }
+    
+    .choose-left {
+      flex: 1;
+      background: url('https://images.unsplash.com/photo-1468436139062-f60a71c5c892?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+      position: relative;
+    }
+    
+    .choose-left::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.4));
+    }
+    
+    .choose-right {
+      flex: 1;
+      background: var(--light);
+      color: var(--dark);
+      padding: 80px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .choose-right h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .choose-right h2:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+    }
+    
+    .choose-right p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.8;
+      color: #555;
+    }
+    
+    .ceature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .ceature:hover {
+      transform: translateX(10px);
+    }
+    
+    .ceature i {
+      font-size: 24px;
+      background: var(--secondary);
+      color: #fff;
+      padding: 15px;
+      border-radius: 50%;
+      margin-right: 20px;
+      min-width: 55px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .ceature:hover i {
+      background: var(--primary);
+      transform: rotate(15deg);
+    }
+    
+    .ceature h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .ceature p {
+      font-size: 15px;
+      color: #666;
+      margin: 0;
+    }
+    
+    /* Testimonial Section */
+    .testimonial-section {
+      position: relative;
+      background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+        url('https://images.unsplash.com/photo-1587202372775-e229f172b9d4?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      color: #fff;
+      padding: 100px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .testimonial-container {
+      max-width: 1100px;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      padding: 0 20px;
+    }
+    
+    .testimonial-img {
+      flex: 1;
+      text-align: center;
+    }
+    
+    .testimonial-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .testimonial-content {
+      flex: 1;
+      text-align: left;
+    }
+    
+    .testimonial-content h2 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .testimonial-content h2:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+    }
+    
+    .testimonial-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    
+    .stars {
+      color: #FFD700;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    
+    .testimonial-author {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    
+    .testimonial-role {
+      font-size: 16px;
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+    
+    .author-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Navigation Arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .arrow.left {
+      left: 5%;
+    }
+    
+    .arrow.right {
+      right: 5%;
+    }
+    
+    .arrow:hover {
+      background: var(--secondary);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    /* News Section */
+    .news-section {
+      padding: 100px 10%;
+      background: #fff;
+      text-align: center;
+    }
+    
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .news-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+    
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .news-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .news-card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .news-content {
+      padding: 25px;
+    }
+    
+    .news-meta {
+      font-size: 14px;
+      color: var(--secondary);
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .news-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--dark);
+      transition: all 0.3s ease;
+    }
+    
+    .news-card:hover .news-title {
+      color: var(--secondary);
+    }
+    
+    .news-description {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .read-more {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--secondary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .read-more:hover {
+      color: var(--primary);
+      transform: translateX(5px);
+    }
+    
+    .read-more i {
+      margin-left: 5px;
+    }
+    
+    /* Special Blue Background for Middle Card */
+    .highlight {
+      background: var(--primary);
+      color: #fff;
+    }
+    
+    .highlight .news-meta,
+    .highlight .news-title,
+    .highlight .news-description,
+    .highlight .read-more {
+      color: #fff;
+    }
+    
+    .highlight .read-more:hover {
+      color: var(--secondary);
+    }
+    
+    /* Appointment Section */
+    .appointment-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      padding: 100px 10%;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .appointment-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      opacity: 0.1;
+    }
+    
+    /* Left Form */
+    .appointment-form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      width: 450px;
+      margin-right: 50px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .appointment-form h3 {
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+    
+    .appointment-form input,
+    .appointment-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      outline: none;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .appointment-form input:focus,
+    .appointment-form textarea:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+    
+    .appointment-form textarea {
+      resize: none;
+      height: 120px;
+    }
+    
+    .appointment-form button {
+      background: var(--secondary);
+      color: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    
+    .appointment-form button:hover {
+      background: var(--primary);
+    }
+    
+    /* Right Content */
+    .appointment-content {
+      max-width: 500px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .appointment-content h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    .appointment-content p {
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+    }
+    
+    .appointment-content .info {
+      margin-bottom: 25px;
+    }
+    
+    .appointment-content .info h4 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .appointment-content .phone {
+      font-weight: 600;
+      font-size: 24px;
+      margin-top: 10px;
+      color: #fff;
+    }
+    
+    /* Illustration */
+    .illustration {
+      margin-top: 30px;
+    }
+    
+    .illustration img {
+      width: 350px;
+      /* filter: brightness(0) invert(1); */
+    }
+    
+    /* Footer */
+    .footer {
+      background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("https://images.unsplash.com/photo-1547082299-de196ea013d6?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 80px 80px 40px;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    
+    .footer h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer h3::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 2px;
+      background: var(--secondary);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .footer p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #bbb;
+      margin-bottom: 20px;
+    }
+    
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer ul li {
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .footer ul li:hover {
+      transform: translateX(5px);
+    }
+    
+    .footer ul li a {
+      text-decoration: none;
+      color: #bbb;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+    }
+    
+    .footer ul li a i {
+      margin-right: 8px;
+      font-size: 12px;
+      color: var(--secondary);
+    }
+    
+    .footer ul li a:hover {
+      color: var(--secondary);
+    }
+    
+    /* Contact Info */
+    .footer .contact-info p {
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .footer .contact-info i {
+      margin-right: 12px;
+      color: var(--secondary);
+      min-width: 20px;
+    }
+    
+    /* Newsletter */
+    .newsletter input {
+      padding: 15px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    
+    .newsletter input::placeholder {
+      color: #ddd;
+    }
+    
+    .newsletter button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      background: var(--secondary);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .newsletter button:hover {
+      background: var(--primary);
+    }
+    
+    /* Social Icons */
+    .social-icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      color: white;
+      background: var(--secondary);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    /* Bottom Bar */
+    .footer-bottom {
+      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      padding: 20px;
+      color: #bbb;
+      font-size: 15px;
+      margin-top: 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+      from { 
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      to { 
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes countUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      
+      .testimonial-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .testimonial-content {
+        text-align: center;
+      }
+      
+      .testimonial-content h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .topbar, .navbar {
+        padding: 10px 30px;
+      }
+      
+      .hero, .features, .about, .services, .products, .choose-right {
+        padding: 60px 30px;
+      }
+      
+      .about-container, .testimonial-container {
+        flex-direction: column;
+      }
+      
+      .choose-us-section {
+        flex-direction: column;
+      }
+      
+      .choose-left {
+        min-height: 400px;
+      }
+      
+      .appointment-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .appointment-form {
+        margin: 0 0 50px 0;
+        width: 100%;
+      }
+      
+      .footer {
+        padding: 60px 30px 30px;
+      }
+      
+      .menu {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .features, .services-grid, .products-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .stats {
+        flex-direction: column;
+        gap: 40px;
+      }
+      
+      .floating-icons {
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .floating-icons .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .topbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      
+      .hero .buttons {
+        flex-direction: column;
+      }
+      
+      .about-buttons {
+        flex-direction: column;
+      }
+      
+      .news-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div>Welcome To MAA DURGA Computers - Your Trusted Tech Partner</div>
+    <div>
+      <i class="fa fa-envelope"></i>Email: info@maadurgacomputers.com &nbsp;&nbsp;
+      <i class="fa fa-phone"></i>Call Us: +91-9719215308
+    </div>
+  </div>
+  
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/7613/7613988.png" alt="MAA DURGA Computers Logo">
+      <h2>MAA DURGA <span>Computers</span></h2>
+    </div>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Refurbished</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button>Get A Quote</button>
+      <div class="search"><i class="fa fa-search"></i></div>
+    </div>
+  </div>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Computer Sales, Repair & <span>Refurbishment</span></h1>
+      <p>Your one-stop solution for all computer needs. From high-performance laptops to expert repair services and quality refurbished systems, we've got you covered with reliable service and competitive prices.</p>
+      <div class="buttons">
+        <a href="#">Explore Products</a>
+        <a href="#">Book Repair</a>
+      </div>
+    </div>
+    
+    <div class="floating-icons">
+      <div class="icon"><i class="fa fa-laptop"></i></div>
+      <div class="icon"><i class="fa fa-tools"></i></div>
+      <div class="icon"><i class="fa fa-recycle"></i></div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-box">
+      <i class="fa fa-laptop-code"></i>
+      <h3>Latest Computers</h3>
+      <p>Get the latest laptops and desktops from top brands with exclusive deals.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fa fa-tools"></i>
+      <h3>Expert Repair</h3>
+      <p>Professional repair services for all computer and laptop issues.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fa fa-sync-alt"></i>
+      <h3>Refurbished Systems</h3>
+      <p>Quality refurbished computers with warranty at affordable prices.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fa fa-truck"></i>
+      <h3>Free Pickup & Delivery</h3>
+      <p>Convenient pickup and delivery service for repairs in the city.</p>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <!-- Left Content -->
+      <div class="about-text">
+        <h2>About MAA DURGA Computers</h2>
+        <p>With over 10 years of experience in the computer industry, MAA DURGA Computers has established itself as a trusted name for computer sales, repair, and refurbishment services.</p>
+        <p>Our team of certified technicians is dedicated to providing top-notch service and support for all your computer needs, whether it's a hardware issue, software problem, or you're looking for a new system.</p>
+        <ul class="about-list">
+          <li><i class="fa fa-check"></i> Computer & Laptop Sales</li>
+          <li><i class="fa fa-check"></i> Hardware Repair & Upgrade</li>
+          <li><i class="fa fa-check"></i> Virus Removal & Data Recovery</li>
+          <li><i class="fa fa-check"></i> Quality Refurbished Systems</li>
+          <li><i class="fa fa-check"></i> Onsite & Remote Support</li>
+          <li><i class="fa fa-check"></i> Networking Solutions</li>
+        </ul>
+        <div class="about-buttons">
+          <a href="#about" class="btn-primary">About Us</a>
+          <a href="#" class="btn-secondary">Free Consultation</a>
+        </div>
+      </div>
+      <!-- Right Content -->
+      <div class="about-image">
+        <img src="https://img.freepik.com/premium-photo/intricate-circuitry-board-hd-8k-wallpaper-stock-photographic-image_853645-69522.jpg?w=2000" alt="Computer Repair">
+        <div class="play-btn"><i class="fa fa-play"></i></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section class="services">
+    <div class="services-container">
+      <h5>Our Services</h5>
+      <h2>What We Offer</h2>
+      <p>From sales to repairs and everything in between, we provide comprehensive computer solutions tailored to your needs.</p>
+      <div class="services-grid">
+        <!-- Service Box -->
+        <div class="service-box">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.t08V0v20mjEtowHf41-1zQHaE7?w=626&h=417&rs=1&pid=ImgDetMain&o=7&rm=3" alt="laptop repair" style="background-size: contain;display: flex; width:290px;height: auto;">
+          <div class="service-icon"><i class="fa fa-laptop"></i></div>
+          <h3>Laptop Repair</h3>
+          <p>Expert repair services for all laptop brands and models, including screen replacement, keyboard repair, and more.</p>
+        </div>
+        <div class="service-box">
+            <img src="https://img.freepik.com/premium-photo/computer-repair-hd-image-computer-technician-laptop-repair-desktop-repair-it-support_1012565-21635.jpg" alt="desktop repair" style="background-size: contain;display: flex; width:290px;height: auto;">
+          <div class="service-icon"><i class="fa fa-desktop"></i></div>
+          <h3>Desktop Repair</h3>
+          <p>Comprehensive desktop computer repair, from power supply issues to motherboard problems.</p>
+        </div>
+        <div class="service-box">
+          <img src="https://www.bvainc.com/wp-content/uploads/2022/09/Enhance-Business-Data-Security-Backup-Recovery-Solutions.jpg" alt="virus removal" style="background-size: contain;display: flex; width:290px;height: auto;">
+          <div class="service-icon"><i class="fa fa-database"></i></div>
+          <h3>Data Recovery</h3>
+          <p>Professional data recovery services to retrieve your important files from damaged storage devices.</p>
+        </div>
+        <div class="service-box">
+            <img src="https://www.microgate.co.uk/wp-content/uploads/2016/03/Hardware-Upgrade.jpg" alt="hardware upgrade" style="background-size: contain;display: flex; width:290px;height: auto;">
+          <div class="service-icon"><i class="fa fa-sync-alt"></i></div>
+          <h3>Hardware Upgrade</h3>
+          <p>Boost your computer's performance with RAM, SSD, and graphics card upgrades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Products Section -->
+  <section class="products">
+    <div class="section-header">
+      <h2>Featured Products</h2>
+      <p>Explore our range of new and refurbished computers and laptops</p>
+    </div>
+    
+    <div class="products-grid">
+      <!-- Product Card -->
+      <div class="product-card">
+        <div class="product-badge">New</div>
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80" alt="Gaming Laptop">
+        </div>
+        <div class="product-content">
+          <h3 class="product-title">Gaming Laptop</h3>
+          <div class="product-price">
+            <span class="price">₹85,999</span>
+            <span class="old-price">₹92,999</span>
+          </div>
+          <div class="product-rating">
+            ★★★★★
+          </div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product Card -->
+      <div class="product-card">
+        <div class="product-badge">Refurbished</div>
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80" alt="Business Laptop">
+        </div>
+        <div class="product-content">
+          <h3 class="product-title">Business Laptop</h3>
+          <div class="product-price">
+            <span class="price">₹32,999</span>
+            <span class="old-price">₹45,999</span>
+          </div>
+          <div class="product-rating">
+            ★★★★☆
+          </div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+      </div>
+      
+      <!-- Product Card -->
+      <div class="product-card">
+        <div class="product-badge">New</div>
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1551645120-d70bfe84c826?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80" alt="All-in-One PC">
+        </div>
+        <div class="product-content">
+          <h3 class="product-title">All-in-One PC</h3>
+          <div class="product-price">
+            <span class="price">₹55,999</span>
+            <span class="old-price">₹62,999</span>
+          </div>
+          <div class="product-rating">
+            ★★★★★
+          </div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stat-box">
+      <i class="fa fa-laptop"></i>
+      <h2>2,500+</h2>
+      <p>Systems Sold</p>
+    </div>
+    <div class="stat-box">
+      <i class="fa fa-tools"></i>
+      <h2>5,000+</h2>
+      <p>Repairs Done</p>
+    </div>
+    <div class="stat-box">
+      <i class="fa fa-users"></i>
+      <h2>1,200+</h2>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat-box">
+      <i class="fa fa-award"></i>
+      <h2>15+</h2>
+      <p>Years Experience</p>
+    </div>
+  </section>
+  
+  <!-- Why Choose Us Section -->
+  <section class="choose-us-section">
+    <!-- Left Image -->
+    <div class="choose-left"></div>
+    <!-- Right Content -->
+    <div class="choose-right">
+      <h2>Why Choose MAA DURGA Computers!</h2>
+      <p>We stand out from the competition with our commitment to quality, customer service, and technical expertise.</p>
+      <div class="ceature">
+        <i class="fas fa-coins"></i>
+        <div>
+          <h3>Competitive Pricing</h3>
+          <p>Get the best value for your money with our competitive prices on products and services.</p>
+        </div>
+      </div>
+      <div class="ceature">
+        <i class="fas fa-certificate"></i>
+        <div>
+          <h3>Quality Assurance</h3>
+          <p>All our products and services come with quality assurance and warranty.</p>
+        </div>
+      </div>
+      <div class="ceature">
+        <i class="fas fa-user-tie"></i>
+        <div>
+          <h3>Expert Technicians</h3>
+          <p>Our certified technicians have years of experience in computer repair and maintenance.</p>
+        </div>
+      </div>
+      <div class="ceature">
+        <i class="fas fa-clock"></i>
+        <div>
+          <h3>Quick Turnaround</h3>
+          <p>Most repairs are completed within 24-48 hours to minimize your downtime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <div class="testimonial-container">
+      <!-- Left Side Image -->
+      <div class="testimonial-img">
+        <img src="https://images.unsplash.com/photo-1593642633279-1796119d5482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1938&q=80" alt="Happy Customer">
+      </div>
+      <!-- Testimonial Content -->
+      <div class="testimonial-content">
+        <h2>What Our Clients Say</h2>
+        <p>"I had my laptop repaired at MAA DURGA Computers and I'm extremely satisfied with their service. They not only fixed the issue quickly but also gave helpful tips to maintain my laptop. The prices were reasonable and the staff was very professional. I highly recommend their services!"</p>
+        <div class="stars">
+          ★★★★★
+        </div>
+        <div class="testimonial-author">Rajesh Kumar</div>
+        <div class="testimonial-role">Business Owner</div>
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="author-img">
+      </div>
+    </div>
+    <!-- Navigation Arrows -->
+    <button class="arrow left"><i class="fas fa-chevron-left"></i></button>
+    <button class="arrow right"><i class="fas fa-chevron-right"></i></button>
+  </section>
+  
+  <!-- News Section -->
+  <section class="news-section">
+    <div class="section-header">
+      <h2>Latest News & Tips</h2>
+      <p>Stay updated with the latest in technology and computer maintenance tips</p>
+    </div>
+    <div class="news-container">
+      <!-- Card 1 -->
+      <div class="news-card highlight">
+        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.1&auto=format&fit=crop&w=600&q=80" alt="Laptop Maintenance">
+        <div class="news-content">
+          <span class="news-meta">10 June 2025 | By Admin</span>
+          <h3 class="news-title">5 Essential Laptop Maintenance Tips</h3>
+          <p class="news-description">Learn how to keep your laptop running smoothly with these simple maintenance tips that can extend its lifespan.</p>
+          <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Card 2 (Highlighted) -->
+      <div class="news-card highlight">
+        <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.1&auto=format&fit=crop&w=600&q=80" alt="SSD Upgrade">
+        <div class="news-content">
+          <span class="news-meta">15 June 2025 | By Admin</span>
+          <h3 class="news-title">Why You Should Upgrade to an SSD</h3>
+          <p class="news-description">Discover how upgrading to a Solid State Drive can dramatically improve your computer's performance and speed.</p>
+          <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="news-card highlight">
+        <img src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.1&auto=format&fit=crop&w=600&q=80" alt="Virus Protection">
+        <div class="news-content">
+          <span class="news-meta">20 June 2025 | By Admin</span>
+          <h3 class="news-title">How to Protect Your Computer from Viruses</h3>
+          <p class="news-description">Essential tips and best practices to keep your computer safe from viruses, malware, and other security threats.</p>
+          <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Appointment Section -->
+  <section class="appointment-section">
+    <!-- Form -->
+    <div class="appointment-form">
+      <h3>Book a Service</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="tel" placeholder="Your Phone" required>
+        <input type="text" placeholder="Device Type" required>
+        <textarea placeholder="Describe the Issue"></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+    <!-- Content -->
+    <div class="appointment-content">
+      <h2>Need Computer Repair?</h2>
+      <p>We offer fast and reliable repair services for all types of computers and laptops. Our expert technicians can diagnose and fix a wide range of issues.</p>
+      <div class="info">
+        <h4>24/7 Customer Support</h4>
+        <h4>Emergency Repair Service</h4>
+        <p class="phone">Call Us: +91-9719215308</p>
+      </div>
+      <p>We provide free pickup and delivery for repair services in the city. Contact us today!</p>
+      <!-- Illustration -->
+      <div class="illustration">
+        <img src="https://thumbs.dreamstime.com/b/computer-repair-service-smartphone-application-isometric-screen-isometry-laptop-serviceman-workers-banner-data-152006111.jpg" alt="Computer Repair Illustration">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo & About -->
+      <div>
+        <h3>MAA DURGA Computers</h3>
+        <p>Your trusted partner for all computer needs. We provide sales, repair, and refurbishment services with a commitment to quality and customer satisfaction.</p>
+        <p>With over 15+ years of experience, we have served thousands of happy customers.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fa fa-phone"></i> <strong>Phone:</strong> +91-9719215308</p>
+        <p><i class="fa fa-envelope"></i> <strong>Email:</strong> info@maadurgacomputers.com</p>
+        <p><i class="fa fa-map-marker-alt"></i> <strong>Address:</strong> PAC Line Subhashnagar Jwalapur, Haridwar, Uttrakhand - 249407</p>
+        <p><i class="fa fa-clock"></i> <strong>Hours:</strong> Monday-Sunday: 9AM - 9PM</p>
+      </div>
+      <!-- Service Links -->
+      <div>
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Laptop Repair</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Desktop Repair</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Data Recovery</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Virus Removal</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Hardware Upgrade</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Refurbished Systems</a></li>
+        </ul>
+      </div>
+      <!-- Newsletter -->
+      <div class="newsletter">
+        <h3>Newsletter</h3>
+        <p>Subscribe to our newsletter to receive updates on new products, services, and tech tips.</p>
+        <input type="email" placeholder="Enter Your Email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2023 MAA DURGA Computers. All Rights Reserved. | Designed with ❤️
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Fixed counter animation for stats
+  const startCounter = () => {
+    const counters = document.querySelectorAll('.stat-box h2');
+    const speed = 200;
+    
+    counters.forEach(counter => {
+      // Get the target value (remove the '+' and commas, then convert to number)
+      const target = parseInt(counter.innerText.replace('+', '').replace(/,/g, ''));
+      let count = 0;
+      const increment = Math.ceil(target / speed);
+      
+      // Update the counter function
+      const updateCount = () => {
+        if (count < target) {
+          count += increment;
+          if (count > target) count = target;
+          
+          // Format number with commas and add back the '+' if needed
+          const displayText = count.toLocaleString() + (counter.dataset.hasPlus ? '+' : '');
+          counter.innerText = displayText;
+          
+          setTimeout(updateCount, 1);
+        }
+      };
+      
+      // Store whether the original text had a '+' sign
+      if (counter.innerText.includes('+')) {
+        counter.dataset.hasPlus = true;
+      }
+      
+      // Start counting from 0
+      counter.innerText = '0' + (counter.dataset.hasPlus ? '+' : '');
+      
+      updateCount();
+    });
+  };
+  
+  // Start counter when stats section is in view
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounter();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  observer.observe(document.querySelector('.stats'));
+  </script>
+</body>
+</html>
